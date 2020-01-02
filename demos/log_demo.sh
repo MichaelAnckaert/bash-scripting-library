@@ -10,6 +10,8 @@ bsl_header "Demo of the BSL log functions"
 BSL_LOG_STYLE=2
 bsl_log_info --progress "Running task that takes a while..."
 sleep 3
+bsl_log_info --progress "Still running the task.."
+sleep 2
 bsl_log_success --progress "Finished the task!"
 
 bsl_log_info --progress "This long running task will generate a warning"

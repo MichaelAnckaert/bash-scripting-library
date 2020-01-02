@@ -81,6 +81,7 @@ function bsl_log_info {
 	case $i in
 	    --progress)
 		opts="-n"
+		echo -e -n "\r\033[K"
 		shift
 		;;
 	    *)
