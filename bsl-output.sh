@@ -20,33 +20,42 @@ CROSSOUT="\033[9m"
 RED="\033[0;31m"
 LIGHT_RED="\033[0;91m"
 RED_BG="\033[1;41m"
+LIGHT_RED_BG="\033[1;101m"
 
 GREEN="\033[0;32m"
 LIGHT_GREEN="\033[0;92m"
 GREEN_BG="\033[1;42m"
+LIGHT_GREEN_BG="\033[1;102m"
 
 ORANGE="\033[0;33m"
 ORANGE_BG="\033[1;43m"
+BROWN="\033[0;33m"
+BROWN_BG="\033[1;43m"
 
 YELLOW="\033[0;93m"
+YELLOW_BG="\033[0;103m"
 
 BLUE="\033[0;34m"
 LIGHT_BLUE="\033[0;94m"
 BLUE_BG="\033[1;44m"
+LIGHT_BLUE_BG="\033[1;104m"
 
 PURPLE="\033[0;35m"
 LIGHT_PURPLE="\033[0;95m"
 PURPLE_BG="\033[1;45m"
+LIGHT_PURPLE_BG="033[1;105m"
 
 CYAN="\033[0;36m"
 LIGHT_CYAN="\033[0;96m"
 CYAN_BG="\033[1;46m"
+LIGHT_CYAN_BG="\033[1;106m"
 
 LIGHT_GRAY="\033[0;37m"
 WHITE="\033[0;97m"
 WHITE_BG="\033[1;47m"
 
 DARK_GRAY="\033[1;30m"
+BLACK_BG="\033[1;100m"
 
 # Use $NC to reset the color and style formatting
 NC="\033[0m"
@@ -73,6 +82,12 @@ function bsl-output-demo {
     echo -e "${BLUE}${BOLD}BSL Output demo version ${VERSION}${NC}"
     echo -e "More information can be found at ${BLUE}${UNDERLINE}${URL}${NC}"
     echo "\n"
+
+    echo -e "${BLUE}${BOLD}Styling Output${NC}"
+    echo "You can add extra emphasis to your script output using the variables \$BOLD, \$ITALIC, \$UNDERLINE and \$BLINK:"
+    echo -e "So output some text ${BOLD}in a bold font weight${NC}, or ${ITALIC}add emphasis using italics${NC} or ${UNDERLINE}by underlining words${NC} and ${BLINK}go nuts using the blink variable${NC}"
+    echo "\n"
+    
     echo -e "${BLUE}${BOLD}Color Output${NC}"
     echo "Let's have a look at outputting color in your scripts using scriptor."
     echo "To output color, use the Bash ${ITALIC}${UNDERLINE}echo${NC} function."
@@ -91,7 +106,7 @@ function bsl-output-demo {
 
     echo "\n"
     echo "Colored backgrounds are also supported using the XXXX_BG variables, for example \$PURPLE_BG:"
-    echo -e "${RED_BG} Red BG ${GREEN_BG} Green BG ${ORANGE_BG} Orange BG ${BLUE_BG} Blue BG ${PURPLE_BG} Purple BG ${CYAN_BG} Cyan BG ${WHITE_BG} White BG ${NC}"
+    echo -e "${RED_BG} Red BG ${GREEN_BG} Green BG ${YELLOW_BG} Yellow BG ${BLUE_BG} Blue BG ${PURPLE_BG} Purple BG ${CYAN_BG} Cyan BG ${WHITE_BG} White BG ${NC}"
 
     echo "\n"
     echo -e "${BLUE}${BOLD}Log message outputting${NC}"
