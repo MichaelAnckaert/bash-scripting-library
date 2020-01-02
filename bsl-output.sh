@@ -62,19 +62,19 @@ NC="\033[0m"
 
 # Define message logging functions
 function log_info {
-	echo -e "${BLUE}${BOLD}[INFO]$NORMAL    $1${NC}"
+    echo -e "${BLUE}${BOLD}[INFO]$NORMAL    $1${NC}"
 }
 
 function log_success {
-	echo -e "${GREEN}${BOLD}[SUCCESS]$NORMAL $1${NC}"
+    echo -e "${GREEN}${BOLD}[SUCCESS]$NORMAL $1${NC}"
 }
 
 function log_warning {
-	echo -e "${ORANGE}${BOLD}[WARNING]$NORMAL $1${NC}"
+    echo -e "${ORANGE}${BOLD}[WARNING]$NORMAL $1${NC}"
 }
 
 function log_error {
-	echo -e "${RED}${BOLD}[ERROR]$NORMAL   $1${NC}"
+    echo -e "${RED}${BOLD}[ERROR]$NORMAL   $1${NC}"
 }
 
 # Demo function
