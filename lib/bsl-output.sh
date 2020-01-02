@@ -76,11 +76,24 @@ function bsl_log_info {
 	    prefix="";;
     esac
 
-    echo -e "${BLUE}${BOLD}$prefix$NORMAL $1${RESET}"
+    for i in "$@"
+    do
+	case $i in
+	    --progress)
+		opts="-n"
+		shift
+		;;
+	    *)
+		msg=$i # unknown option
+		;;
+	esac
+    done
+
+    echo -e $opts "${BLUE}${BOLD}$prefix$NORMAL $msg${RESET}"
 }
 
 function bsl_log_success {
-        case $BSL_LOG_STYLE in
+    case $BSL_LOG_STYLE in
 	1)
 	    prefix="[SUCCESS]";;
 	2)
@@ -89,12 +102,24 @@ function bsl_log_success {
 	    prefix="";;
     esac
 
+    for i in "$@"
+    do
+	case $i in
+	    --progress)
+		echo -e -n "\r\033[K"
+		shift
+		;;
+	    *)
+		msg=$i # unknown option
+		;;
+	esac
+    done
 
     echo -e "${GREEN}${BOLD}$prefix$NORMAL $1${RESET}"
 }
 
 function bsl_log_warning {
-        case $BSL_LOG_STYLE in
+    case $BSL_LOG_STYLE in
 	1)
 	    prefix="[WARNING]";;
 	2)
@@ -103,6 +128,19 @@ function bsl_log_warning {
 	    prefix="";;
     esac
 
+    for i in "$@"
+    do
+	case $i in
+	    --progress)
+		start="\r"
+		echo -e -n "\r\033[K"
+		shift
+		;;
+	    *)
+		msg=$i # unknown option
+		;;
+	esac
+    done
 
     echo -e "${ORANGE}${BOLD}$prefix$NORMAL $1${RESET}"
 }
@@ -117,6 +155,18 @@ function bsl_log_error {
 	    prefix="";;
     esac
 
+    for i in "$@"
+    do
+	case $i in
+	    --progress)
+		echo -e -n "\r\033[K"
+		shift
+		;;
+	    *)
+		msg=$i # unknown option
+		;;
+	esac
+    done
 
     echo -e "${RED}${BOLD}$prefix$NORMAL $1${RESET}"
 }
