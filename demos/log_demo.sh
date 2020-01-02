@@ -7,6 +7,15 @@ source $BASE_DIR/../lib/bsl-output.sh
 
 bsl_header "Demo of the BSL log functions"
 
+echo "Some basic logging demonstration:"
+
+bsl_log_info "This is a simple log message"
+bsl_log_info "Another log message"
+
+
+echo ""
+echo "Now some log messages that will overwrite with the next log messag sent by bsl_log_* functions"
+
 bsl_log_info --progress "Running task that takes a while..."
 sleep 3
 bsl_log_info --progress "Still running the task.."
