@@ -61,17 +61,18 @@ BLACK_BG="\033[1;100m"
 RESET="\033[0m"
 
 # Logging styles
-#  1 = Square brackets, for example [SUCCESS]
-#  2 = Emoji symbol, for example ✔
+#  1 = Emoji symbol, for example ✔
+#  2 = Square brackets, for example [SUCCESS]
 BSL_LOG_STYLE=1
 
 # Define message logging functions
 function bsl_log_info {
     case $BSL_LOG_STYLE in
 	1)
-	    prefix="[INFO]   ";;
-	2)
 	    prefix="i";;
+	2)
+	    prefix="[INFO]   ";;
+
 	*)
 	    prefix="";;
     esac
@@ -96,9 +97,9 @@ function bsl_log_info {
 function bsl_log_success {
     case $BSL_LOG_STYLE in
 	1)
-	    prefix="[SUCCESS]";;
-	2)
 	    prefix="✔";;
+	2)
+	    prefix="[SUCCESS]";;
 	*)
 	    prefix="";;
     esac
@@ -122,9 +123,9 @@ function bsl_log_success {
 function bsl_log_warning {
     case $BSL_LOG_STYLE in
 	1)
-	    prefix="[WARNING]";;
-	2)
 	    prefix="!";;
+	2)
+	    prefix="[WARNING]";;
 	*)
 	    prefix="";;
     esac
@@ -149,9 +150,9 @@ function bsl_log_warning {
 function bsl_log_error {
     case $BSL_LOG_STYLE in
 	1)
-	    prefix="[ERROR]  ";;
-	2)
 	    prefix="✖";;
+	2)
+	    prefix="[ERROR]  ";;
 	*)
 	    prefix="";;
     esac

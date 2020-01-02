@@ -7,7 +7,6 @@ source $BASE_DIR/../lib/bsl-output.sh
 
 bsl_header "Demo of the BSL log functions"
 
-BSL_LOG_STYLE=2
 bsl_log_info --progress "Running task that takes a while..."
 sleep 3
 bsl_log_info --progress "Still running the task.."
