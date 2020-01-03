@@ -1,7 +1,8 @@
 #!/bin/bash
 
-source lib/bsl-output.sh
-source lib/bsl-input.sh
+BASE_DIR=$(dirname $0)
+source $BASE_DIR/../lib/bsl-output.sh
+source $BASE_DIR/../lib/bsl-input.sh
 
 function welcome  {
     echo -e "${BLUE}${BOLD}BSL Version ${VERSION} Demo Script${RESET}"
@@ -10,7 +11,7 @@ function welcome  {
 }
 
 # Demo function
-function bsl-output-demo { 
+function bsl-output-demo {
     echo -e "${BLUE}${BOLD}Styling Output${RESET}"
     echo "You can add extra emphasis to your script output using the variables \$BOLD, \$ITALIC, \$UNDERLINE and \$BLINK:"
     echo -e "So output some text ${BOLD}in a bold font weight${RESET}, or ${ITALIC}add emphasis using italics${RESET} or ${UNDERLINE}by underlining words${RESET} and ${BLINK}go nuts using the blink variable${RESET}"
@@ -34,7 +35,7 @@ function bsl-output-demo {
 
     echo ""
     echo "Colored backgrounds are also supported using the XXXX_BG variables, for example \$PURPLE_BG:"
-    echo -e "${RED_BG} Red BG ${GREEN_BG} Green BG ${YELLOW_BG} Yellow BG ${BLUE_BG} Blue BG ${PURPLE_BG} Purple BG ${CYAN_BG} Cyan BG ${WHITE_BG} White BG ${RESET}"
+    echo -e "${RED_BG} Red BG ${GREEN_BG} Green BG ${YELLOW_BG} Yellow BG ${ORANGE_BG} Orange BG ${BLUE_BG} Blue BG ${PURPLE_BG} Purple BG ${CYAN_BG} Cyan BG ${WHITE_BG} White BG ${RESET}"
 
     echo ""
     echo -e "${BLUE}${BOLD}Log message outputting${RESET}"

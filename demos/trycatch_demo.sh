@@ -13,9 +13,8 @@ try {
     bsl_log_info --progress "Trying to run a command that will fail"
     sleep 2
     apt fake-command-that-will-not-trigger > /dev/null 2>&1
-    false
     echo "This won't trigger"
-}
-catch {
+} catch {
     bsl_log_error --progress "We caught an error and are unable to continue!"
 }
+

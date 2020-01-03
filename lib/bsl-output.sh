@@ -105,6 +105,7 @@ function bsl_log_success {
 	    prefix="";;
     esac
 
+    opts=""
     for i in "$@"
     do
 	case $i in
@@ -131,6 +132,7 @@ function bsl_log_warning {
 	    prefix="";;
     esac
 
+    opts=""
     for i in "$@"
     do
 	case $i in
@@ -158,10 +160,11 @@ function bsl_log_error {
 	    prefix="";;
     esac
 
+    opts=""
     for i in "$@"
     do
 	case $i in
-	    --PROGRESS)
+	    --progress)
 		echo -e -n "\r\033[K"
 		shift
 		;;
