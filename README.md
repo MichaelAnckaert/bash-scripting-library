@@ -5,13 +5,8 @@ I tried to write all scripts and files in a very clear and readable manner. You'
 
 [Documentation](docs.md)
 
-## Screenshots
+## Screenshot
 
-Output logging 
-
-![Output](screenshots/color.png)
-
-Message
-![Logging output](screenshots/logging.png)
+![Output from demo.sh](screenshot.png)
 
 

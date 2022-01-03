@@ -1,9 +1,10 @@
 # bsl-output.sh
 # Bash Script Library: Output functions
-# version 0.1.0
+# version 0.1.1
 # https://github.com/MichaelAnckaert/bash-script-library
 # Author Michael Anckaert <michael.anckaert@sinax.be>
-BSL_VERSION="0.1.0"
+
+BSL_VERSION="0.1.1"
 BSL_URL="https://github.com/MichaelAnckaert/bash-script-library"
 
 # Define styles

@@ -1,4 +1,8 @@
 #!/bin/bash
+# Bash Script Library: Full Demo
+# version 0.1.1
+# https://github.com/MichaelAnckaert/bash-script-library
+# Author Michael Anckaert <michael.anckaert@sinax.be>
 
 BASE_DIR=$(dirname $0)
 source $BASE_DIR/../lib/bsl-output.sh
