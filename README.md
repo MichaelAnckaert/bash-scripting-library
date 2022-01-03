@@ -3,4 +3,4 @@ Bash Script Library or BSL is a collection of useful Bash scripts and helper fun
 
 I tried to write all scripts and files in a very clear and readable manner. You're encouraged to read the scripts as there are plenty of comments and other helpful information in the scripts themselves. 
 
-Full documentation can be found over at [https://bsl.sh](https://bsl.sh)
+[Documentation](docs.md)
