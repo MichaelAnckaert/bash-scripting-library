@@ -3,8 +3,8 @@
 # version 0.1.0
 # https://github.com/MichaelAnckaert/bash-script-library
 # Author Michael Anckaert <michael.anckaert@sinax.be>
-VERSION="0.1.0"
-URL="https://github.com/MichaelAnckaert/bash-script-library"
+BSL_VERSION="0.1.0"
+BSL_URL="https://github.com/MichaelAnckaert/bash-script-library"
 
 # Define styles
 NORMAL="\033[0m"
@@ -85,7 +85,9 @@ function bsl_log_info {
 
     case $BSL_LOG_TIMESTAMP in
         1)
-            prefix="$prefix $(date +'%Y-%m-%d %H:%M:%S')"
+            ts=" $(date +'%Y-%m-%d %H:%M:%S')";;
+        2)
+	    ts=" ";;
     esac
 
     opts=""
@@ -103,7 +105,7 @@ function bsl_log_info {
 	esac
     done
 
-    echo -e $opts "${BLUE}${BOLD}$prefix$NORMAL $msg${RESET}"
+    echo -e $opts "${BLUE}${BOLD}$prefix$NORMAL$ts $msg${RESET}"
 }
 
 function bsl_log_success {
@@ -118,7 +120,9 @@ function bsl_log_success {
 
     case $BSL_LOG_TIMESTAMP in
         1)
-            prefix="$prefix $(date +'%Y-%m-%d %H:%M:%S')"
+            ts=" $(date +'%Y-%m-%d %H:%M:%S')";;
+	*) 
+	    ts=" ";;
     esac
 
 
@@ -136,7 +140,7 @@ function bsl_log_success {
 	esac
     done
 
-    echo -e "${GREEN}${BOLD}$prefix$NORMAL $1${RESET}"
+    echo -e "${GREEN}${BOLD}$prefix$NORMAL$ts $1${RESET}"
 }
 
 function bsl_log_warning {
@@ -151,7 +155,9 @@ function bsl_log_warning {
 
     case $BSL_LOG_TIMESTAMP in
         1)
-            prefix="$prefix $(date +'%Y-%m-%d %H:%M:%S')"
+            ts=" $(date +'%Y-%m-%d %H:%M:%S')";;
+        2)
+	    ts=" ";;
     esac
 
     opts=""
@@ -169,7 +175,7 @@ function bsl_log_warning {
 	esac
     done
 
-    echo -e "${ORANGE}${BOLD}$prefix$NORMAL $1${RESET}"
+    echo -e "${ORANGE}${BOLD}$prefix$NORMAL$ts $1${RESET}"
 }
 
 function bsl_log_error {
@@ -184,7 +190,9 @@ function bsl_log_error {
 
     case $BSL_LOG_TIMESTAMP in
         1)
-            prefix="$prefix $(date +'%Y-%m-%d %H:%M:%S')"
+            ts=" $(date +'%Y-%m-%d %H:%M:%S')";;
+    	2)
+	    ts=" ";;
     esac
 
     opts=""
@@ -201,7 +209,7 @@ function bsl_log_error {
 	esac
     done
 
-    echo -e "${RED}${BOLD}$prefix$NORMAL $1${RESET}"
+    echo -e "${RED}${BOLD}$prefix$NORMAL$ts $1${RESET}"
 }
 
 # Define output printing functions

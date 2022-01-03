@@ -5,8 +5,8 @@ source $BASE_DIR/../lib/bsl-output.sh
 source $BASE_DIR/../lib/bsl-input.sh
 
 function welcome  {
-    echo -e "${BLUE}${BOLD}BSL Version ${VERSION} Demo Script${RESET}"
-    echo -e "More information can be found at ${BLUE}${UNDERLINE}${URL}${RESET}"
+    echo -e "${BLUE}${BOLD}BSL Version ${BSL_VERSION} Demo Script${RESET}"
+    echo -e "More information can be found at ${BLUE}${UNDERLINE}${BSL_URL}${RESET}"
     echo ""
 }
 
@@ -22,7 +22,7 @@ function bsl-output-demo {
     echo -e "To output color, use the Bash ${ITALIC}${UNDERLINE}echo${RESET} function."
     echo "You can read the source of the scriptor library to view all available"
     echo "colors. All colors are named in all caps with regular, bold and italic variants."
-    echo "Here are some demo lines and the command that generated them:\n"
+    echo -e "Here are some demo lines and the command that generated them:\n"
 
     echo -e "${PURPLE}${ITALIC}Command:${RESET} echo -e \"\${RED} This text is in regular red using the \$RED variable\${RESET}\""
     echo -e "${PURPLE}${ITALIC}Output: ${RESET} ${RED}This text is in regular red using the \$RED variable${RESET}"
@@ -56,6 +56,25 @@ function bsl-output-demo {
     bsl_log_success "A success message can be logged using the ${BOLD}bsl_log_success${RESET} function"
     bsl_log_warning "A warning message can be logged using the ${BOLD}bsl_log_warning${RESET} function"
     bsl_log_error "An error message can be logged using the ${BOLD}bsl_log_error${RESET} function"
+
+    echo ""
+    echo -e "${BLUE}${BOLD}Output automatic timestamps in your log output${RESET}"
+    echo -e "Set the BSL_LOG_TIMESTAMP variable to 1 to enable the automatic timestamps\n"
+    
+    BSL_LOG_STYLE=2
+    BSL_LOG_TIMESTAMP=1
+    bsl_log_info "An info message with a timestamp"
+    bsl_log_success "A success message with a timestamp"
+    bsl_log_warning "A warning message with a timestamp"
+    bsl_log_error "An error message with a timestamp"
+
+    echo ""
+    echo -e "${BLUE}${BOLD}Output progress${RESET}"
+    echo -e "Pass the '--progress' flag to update the a previous output line:"
+    bsl_log_info --progress "Running a command that takes 5 seconds..."
+    sleep 5
+    bsl_log_info --progress "Done after 5 seconds!"
+    
 
     echo ""
 }
