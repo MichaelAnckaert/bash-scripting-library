@@ -12,6 +12,15 @@ echo "Some basic logging demonstration:"
 bsl_log_info "This is a simple log message"
 bsl_log_info "Another log message"
 
+echo "Different logging style"
+BSL_LOG_STYLE=2
+
+echo "With timestamp:"
+BSL_LOG_TIMESTAMP=1
+bsl_log_info "A line logged with a timestamp"
+
+
+
 
 echo ""
 echo "Now some log messages that will overwrite with the next log messag sent by bsl_log_* functions"

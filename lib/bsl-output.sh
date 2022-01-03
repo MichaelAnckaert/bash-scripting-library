@@ -65,6 +65,12 @@ RESET="\033[0m"
 #  2 = Square brackets, for example [SUCCESS]
 BSL_LOG_STYLE=1
 
+# Timestamp logging
+#  0 = Disabled
+#  1 = Enabled
+BSL_LOG_TIMESTAMP=0
+
+
 # Define message logging functions
 function bsl_log_info {
     case $BSL_LOG_STYLE in
@@ -75,6 +81,11 @@ function bsl_log_info {
 
 	*)
 	    prefix="";;
+    esac
+
+    case $BSL_LOG_TIMESTAMP in
+        1)
+            prefix="$prefix $(date +'%Y-%m-%d %H:%M:%S')"
     esac
 
     opts=""
@@ -105,6 +116,12 @@ function bsl_log_success {
 	    prefix="";;
     esac
 
+    case $BSL_LOG_TIMESTAMP in
+        1)
+            prefix="$prefix $(date +'%Y-%m-%d %H:%M:%S')"
+    esac
+
+
     opts=""
     for i in "$@"
     do
@@ -130,6 +147,11 @@ function bsl_log_warning {
 	    prefix="[WARNING]";;
 	*)
 	    prefix="";;
+    esac
+
+    case $BSL_LOG_TIMESTAMP in
+        1)
+            prefix="$prefix $(date +'%Y-%m-%d %H:%M:%S')"
     esac
 
     opts=""
@@ -158,6 +180,11 @@ function bsl_log_error {
 	    prefix="[ERROR]  ";;
 	*)
 	    prefix="";;
+    esac
+
+    case $BSL_LOG_TIMESTAMP in
+        1)
+            prefix="$prefix $(date +'%Y-%m-%d %H:%M:%S')"
     esac
 
     opts=""
